@@ -20,3 +20,5 @@ The website is designed to provide a modern shopping experience with smooth resp
 - **HTML5**
 - **Tailwind CSS (v2.2.19)**
 - **Vanilla JavaScript**# Nostra-clone
+
+Live Here : https://mani-mc.github.io/Nostra-clone/
