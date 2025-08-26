@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nostra</title>
+  <!-- Font Awesome Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS Link -->
+  <link href="
+    https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+    " rel="stylesheet">
+
+  <!--Google Font Link  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="flex items-center justify-between w-full p-2 border-b-2 text-gray-800 sticky top-0 z-50 bg-white">
+        <h1 class="font-bold text-2xl md:text-4xl">Nostra</h1>
+
+        <div id="dropdown-menu"
+            class="hidden fixed inset-0 bg-gray-800 w-64 h-full text-white flex flex-col gap-3 p-4 transform -translate-x-full transition-transform duration-300 ease-in-out
+         lg:static lg:translate-x-0 lg:bg-transparent lg:text-gray-800 lg:p-4 lg:flex lg:flex-row lg:items-center lg:justify-end  lg:tracking-wider lg:space-x-7 lg:whitespace-nowrap">
+            <i class="fa-solid fa-xmark text-2xl absolute top-4 right-4 cursor-pointer lg:hidden" id="navclosebar"
+                style="color: #ffffff;"></i>
+            <a class="hover:underline" href="./index.html">Home</a>
+            <a class="hover:underline" href="./index.html">New Arrival</a>
+            <a class="hover:underline" href="./index.html">Most Wanted</a>
+            <a class="hover:underline" href="./collections.html">Collections</a>
+            <a class="hover:underline" href="./contact.html">Contact Us</a>
+        </div>
+        <div id="togglebtn" class="lg:hidden">
+            <i class="fa-solid fa-bars cursor-pointer" style="color: #221712;"></i>
+        </div>
+    </div>
+
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-52 md:w-60 lg:w-72 border-r p-6 bg-white z-20">
+      <h2 class="text-2xl font-bold mb-4">Occasion</h2>
+      <div class="space-y-2 mb-6">
+        <label><input type="checkbox" class="filterBox mr-2" value="summer" />Summer</label><br />
+        <label><input type="checkbox" class="filterBox mr-2" value="party" />Party</label><br />
+        <label><input type="checkbox" class="filterBox mr-2" value="beach" />Beach</label>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">Colors</h2>
+      <div class="space-y-2 mb-6">
+        <label><input type="checkbox" class="filterBox mr-2" value="red" />Red</label><br />
+        <label><input type="checkbox" class="filterBox mr-2" value="blue" />Blue</label><br />
+        <label><input type="checkbox" class="filterBox mr-2" value="white" />White</label><br />
+        <label><input type="checkbox" class="filterBox mr-2" value="green" />Green</label>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4">Arrivals</h2>
+      <div class="space-y-2">
+        <label><input type="checkbox" class="filterBox mr-2" value="new" />New</label><br />
+        <label><input type="checkbox" class="filterBox mr-2" value="old" />Old</label>
+      </div>
+    </aside>
+    <!-- Main content -->
+    <main class="flex-1 ml-0  p-6">
+      <!-- Search bar -->
+      <div class="flex items-center mb-6">
+        <input type="text" id="searchInput" placeholder="search" class="w-full border rounded p-2" />
+      </div>
+
+      <!-- Products Grid -->
+      <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+        <!-- Product 1 -->
+        <div class="product" data-tags="summer floral multicolor new">
+          <img src="./images/new4.jpg" class="w-24 md:w-44 lg:w-full rounded" />
+          <h3 class="font-bold text-xs md:text-base lg:text-xl mt-2">Floral Summer Shirt</h3>
+          <p class="text-xs md:text-sm lg:text-lg">$29</p>
+        </div>
+        <!-- Product 2 -->
+        <div class="product" data-tags="summer green new">
+          <img src="./images/new6.jpg" class="w-24 md:w-44 lg:w-full rounded" />
+          <h3 class="font-bold text-xs md:text-base lg:text-xl mt-2">Summer Green</h3>
+          <p class="text-xs md:text-sm lg:text-lg">$29</p>
+        </div>
+        <!-- Product 3 -->
+        <div class="product" data-tags="party floral red old">
+          <img src="./images/new1.jpg" class="w-24 md:w-44 lg:w-full rounded" />
+          <h3 class="font-bold text-xs md:text-base lg:text-xl mt-2">Party Floral Shirt</h3>
+          <p class="text-xs md:text-sm lg:text-lg">$39</p>
+        </div>
+        <!-- Product 4 -->
+        <div class="product" data-tags="beach floral white new">
+          <img src="./images/new8.jpg" class="w-24 md:w-44 lg:w-full rounded" />
+          <h3 class="font-bold text-xs md:text-base lg:text-xl mt-2">Beach Shirt</h3>
+          <p class="text-xs md:text-sm lg:text-lg">$29</p>
+        </div>
+        <!-- Product 5 -->
+        <div class="product" data-tags="party red blue old">
+          <img src="./images/new9.jpg" class="w-24 md:w-44 lg:w-full rounded" />
+          <h3 class="font-bold text-xs md:text-base lg:text-xl mt-2">Shirt Party Red</h3>
+          <p class="text-xs md:text-sm lg:text-lg">$59</p>
+        </div>
+        <!-- Product 6 -->
+         <div class="product" data-tags="party red blue old">
+          <img src="./images/new3.jpg" class="w-24 md:w-44 lg:w-full rounded" />
+          <h3 class="font-bold text-xs md:text-base lg:text-xl mt-2">Formal Blue</h3>
+          <p class="text-xs md:text-sm lg:text-lg">$49</p>
+        </div>
+        <!-- Product 7 -->
+           <div class="product" data-tags="party red blue old">
+          <img src="./images/new10.jpg" class="w-24 md:w-44 lg:w-full rounded" />
+          <h3 class="font-bold text-xs md:text-base lg:text-xl mt-2">Shirt Party Red</h3>
+          <p class="text-xs md:text-sm lg:text-lg">$59</p>
+        </div>
+        <!-- Product 8 -->
+         <div class="product" data-tags="party floral red old">
+          <img src="./images/new1.jpg" class="w-24 md:w-44 lg:w-full rounded" />
+          <h3 class="font-bold text-xs md:text-base lg:text-xl mt-2">Party Floral Shirt</h3>
+          <p class="text-xs md:text-sm lg:text-lg">$39</p>
+        </div>
+        <!-- Product 9 -->
+          <div class="product" data-tags="summer floral multicolor new">
+          <img src="./images/new4.jpg" class="w-24 md:w-44 lg:w-full rounded" />
+          <h3 class="font-bold text-xs md:text-base lg:text-xl mt-2">Floral Summer Shirt</h3>
+          <p class="text-xs md:text-sm lg:text-lg">$29</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+   <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 mt-auto">
+        <div class="container mx-auto px-4 py-6">
+
+            <!-- Social Icons -->
+            <div class="flex justify-center items-center space-x-6 border-t border-gray-700 pt-6">
+                <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <!-- Brand -->
+            <div class="text-center mt-6">
+                <h2 class="text-xl font-semibold">Nostra</h2>
+                <p class="text-sm text-gray-400">Copyright © 2025 Nostra, Inc.</p>
+            </div>
+
+            <!-- Links -->
+            <div class="flex flex-wrap justify-center gap-4 mt-6 text-sm">
+                <a href="#" class="hover:text-white">Legal Stuff</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Security</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Website Accessibility</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Manage Cookies</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Your Privacy Choices</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+      // Collections Functions
+ document.addEventListener("DOMContentLoaded", () => {
+      const sidebar = document.getElementById("sidebar");
+      const checkboxes = document.querySelectorAll(".filterBox");
+      const searchInput = document.getElementById("searchInput");
+      const productGrid = document.getElementById("productGrid");
+      const products = Array.from(productGrid.querySelectorAll(".product"));
+
+      function applyFilters() {
+        const activeFilters = Array.from(checkboxes)
+          .filter(cb => cb.checked)
+          .map(cb => cb.value.toLowerCase());
+        const q = searchInput.value.trim().toLowerCase();
+
+        products.forEach(card => {
+          const tags = (card.dataset.tags || "").toLowerCase();
+          const matchesFilters = activeFilters.length === 0 || activeFilters.some(f => tags.includes(f));
+          const matchesSearch = !q || card.textContent.toLowerCase().includes(q);
+
+          if (matchesFilters && matchesSearch) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      }
+
+      checkboxes.forEach(cb => cb.addEventListener("change", applyFilters));
+      searchInput.addEventListener("input", applyFilters);
+    });
+    </script>
+</body>
+
+</html>

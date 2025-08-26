@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra</title>
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS Link -->
+    <link href="
+    https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css
+    " rel="stylesheet">
+
+    <!--Google Font Link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Discount Banner  -->
+    <div id="banner">
+        <div
+            class="text-white  p-1 text-xs  bg-gray-800 flex items-center top-0 justify-center gap-2 md:h-8 md:text-base">
+            <p>Sign Up and</p>
+            <p class="font-bold">GET 20% OFF</p>
+            <P>for your first Order</P>
+            <i id="closeban" class="fa-solid fa-xmark cursor-pointer ml-2" style="color: #ffffff;"></i>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="flex items-center justify-between w-full p-2 border-b-2 text-gray-800 sticky top-0 z-50 bg-white">
+        <h1 class="font-bold text-2xl md:text-4xl">Nostra</h1>
+
+        <div id="dropdown-menu"
+            class="hidden fixed inset-0 bg-gray-800 w-64 h-full text-white flex flex-col gap-3 p-4 transform -translate-x-full transition-transform duration-300 ease-in-out
+         lg:static lg:translate-x-0 lg:bg-transparent lg:text-gray-800 lg:p-4 lg:flex lg:flex-row lg:items-center lg:justify-end  lg:tracking-wider lg:space-x-7 lg:whitespace-nowrap">
+            <i class="fa-solid fa-xmark text-2xl absolute top-4 right-4 cursor-pointer lg:hidden" id="navclosebar"
+                style="color: #ffffff;"></i>
+            <a class="hover:underline" href="./index.html">Home</a>
+            <a class="hover:underline" href="#new-arrival">New Arrival</a>
+            <a class="hover:underline" href="#most-wanted">Most Wanted</a>
+            <a class="hover:underline" href="./collections.html">Collections</a>
+            <a class="hover:underline" href="./contact.html">Contact Us</a>
+        </div>
+        <div id="togglebtn" class="lg:hidden">
+            <i class="fa-solid fa-bars cursor-pointer" style="color: #221712;"></i>
+        </div>
+    </div>
+
+    <!-- Silde Image  -->
+    <section class="z-30">
+        <div class="relative p-2">
+            <ul id="slider" class="">
+                <li class="relative h-52 md:h-80 lg:h-96">
+                    <img class=" object-cover rounded-lg w-full h-full" src="./images/slide1.jpg" alt="">
+                    <div class="absolute top-0 left-0 h-full w-full flex">
+                        <h1
+                            class="text-white text-2xl md:text-4xl lg:text-7xl font-bold my-auto h-[50vh] w-full text-center px-6">
+                            Style That
+                            Speaks Before You Do</h1>
+                    </div>
+                    <div class="absolute top-10 md:top-14 h-full w-full flex flex-row justify-center ">
+                        <button class="bg-white my-auto text-center p-1 md:p-2 rounded-md">Explore Now</button>
+                    </div>
+
+                </li>
+                <li class="relative hidden h-52 md:h-80 lg:h-96">
+                    <img class="object-cover rounded-lg w-full h-full" src="./images/slide2.jpg" alt="">
+                    <div class="absolute top-0 left-0 h-full w-full flex">
+                        <h1
+                            class="text-white text-2xl md:text-4xl lg:text-7xl font-bold my-auto w-full  text-center px-6">
+                            Style
+                            That
+                            Speaks Before You Do</h1>
+                    </div>
+                    <div class="absolute top-10 md:top-14 h-full w-full flex flex-row justify-center">
+                        <button class="bg-white my-auto p-1 md;p-2 rounded-md cursor-pointer">Explore Now</button>
+                    </div>
+                </li>
+
+
+                <li class="relative hidden h-52 md:h-80 lg:h-96">
+                    <img class="object-cover rounded-lg w-full h-full" src="./images/slide3.jpg" alt="">
+                    <div class="absolute top-0 left-0 h-full w-full flex">
+                        <h1
+                            class="text-white text-2xl md:text-4xl lg:text-7xl font-bold my-auto w-full text-center px-6">
+                            Style That
+                            Speaks
+                            Before You Do</h1>
+                        <div class="absolute top-10 md:top-14 h-full w-full flex flex-row justify-center">
+                            <button class="bg-white my-auto p-1 md;p-2 rounded-md cursor-pointer">Explore Now</button>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+
+            <div class="absolute flex top-0 left-0  h-full w-full ">
+                <div class="my-auto w-full flex justify-between">
+                    <button onclick="prev()" class="p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="white" class=" h-8 w-8  md:h-16 md:w-16">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m18.75 4.5-7.5 7.5 7.5 7.5m-6-15L5.25 12l7.5 7.5" />
+                        </svg>
+
+                    </button>
+                    <button onclick="next()" class="p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                            stroke="white" class="h-8 w-8 md:h-16 md:w-16">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m5.25 4.5 7.5 7.5-7.5 7.5m6-15 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section>
+        <h1 class="p-2 text-lg md:text-2xl lg:text-3xl font-bold text-gray-800">Brands</h1>
+        <div class="flex justify-between p-2 w-full h-full ">
+            <img class="h-10 md:h-14 lg:h-20" src="./images/logo1.png" alt="">
+            <img class="h-10 md:h-14 lg:h-20" src="./images/logo2.png" alt="">
+            <img class="h-10 md:h-14 lg:h-20" src="./images/logo3.png" alt="">
+            <img class="h-10 md:h-14 lg:h-20" src="./images/logo4.png" alt="">
+            <img class="h-10 md:h-14 lg:h-20" src="./images/logo5.png" alt="">
+            <img class="h-10 md:h-14 lg:h-20" src="./images/logo6.png" alt="">
+            <img class="h-10 md:h-14 lg:h-20" src="./images/logo7.png" alt="">
+            <img class="h-10 md:h-14 lg:h-20" src="./images/logo8.png" alt="">
+        </div>
+    </section>
+
+    <!-- Customer Section -->
+    <section>
+        <div class="p-2 mt-5 flex justify-between  items-center text-gray-800">
+            <h1 class="w-36 md:w-full md:text-base lg:text-lg text-xs font-semibold">We Provide Best Customer
+                Experiences</h1>
+            <p class="text-xs lg:text-sm lg:w-full">|| We ensure that our customer have the best shopping experience</p>
+        </div>
+
+        <section class="grid grid-cols-2 gap-4 p-2 md:grid-cols-4">
+            <div class="h-32 md:h-36 lg:h-44 w-full p-2 shadow-lg rounded-lg bg-gray-50 text-xs  lg:text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="h-8 md:h-10 lg:h-16">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                <h3 class="font-semibold mt-4">Original Products</h3>
+                <p>Every item we offer is 100% authentic, ensuring quality and trust with every purchase.</p>
+            </div>
+
+            <div class="h-32 md:h-36 lg:h-44 w-full p-2 shadow-lg rounded-lg bg-gray-50 text-xs lg:text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="h-8 md:h-10 lg:h-16">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+                </svg>
+
+                <h3 class="font-semibold mt-4">Satisfaction Guarantee</h3>
+                <p>Your satisfaction is our priority. If something isn’t right, we’ll make it right.</p>
+            </div>
+
+            <div class="h-32 md:h-36 lg:h-44 w-full p-2 shadow-lg rounded-lg bg-gray-50 text-xs lg:text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="h-8 md:h-10 lg:h-16">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+                </svg>
+
+                <h3 class="font-semibold mt-4">New Arrivals Daily</h3>
+                <p>Discover fresh styles every day, curated to keep your wardrobe up to date.</p>
+            </div>
+
+            <div class="h-32 md:h-36 lg:h-44 w-full p-2 shadow-lg rounded-lg bg-gray-50 text-xs lg:text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="h-8 md:h-10 lg:h-16">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+
+                <h3 class="font-semibold mt-4">Fast & Free Shipping</h3>
+                <p>Enjoy seamless shopping with quick, complimentary delivery on all orders.</p>
+            </div>
+        </section>
+    </section>
+
+    <!-- New Arrival -->
+    <section id="new-arrival" class="z-20">
+        <h1 class="p-2 text-lg md:text-2xl lg:text-3xl font-bold  text-gray-800">New Arrivals</h1>
+        <div class="flex flex-row justify-around p-2 gap-2">
+            <div class="relative">
+                <img class="h-28 md:h-40 lg:h-72 rounded-lg backdrop bg-black opacity-40" src="./images/new3.jpg"
+                    alt="">
+                <button
+                    class="absolute top-12 text-xs lg:text-base lg:top-28 lg:left-24 hover:bg-gray-800 hover:text-white left-7 md:top-20 md:left-12 bg-white rounded-lg"
+                    style=" padding: 1px;">ShopNow</button>
+            </div>
+
+            <div class="relative">
+                <img class="h-28 md:h-40 lg:h-72 rounded-lg backdrop bg-black opacity-40" src="./images/new1.jpg"
+                    alt="">
+                <button
+                    class="absolute text-xs lg:text-base lg:top-28 lg:left-24  hover:bg-gray-800 hover:text-white top-12 left-7 md:top-20 md:left-12 bg-white rounded-lg"
+                    style=" padding: 1px;">Shop Now</button>
+            </div>
+
+            <div class="relative">
+                <img class="h-28 md:h-40 lg:h-72 rounded-lg backdrop bg-black opacity-40" src="./images/new2.jpg"
+                    alt="">
+                <button
+                    class="absolute text-xs lg:text-base lg:top-28 lg:left-24  hover:bg-gray-800 hover:text-white top-12 left-7 md:top-20 md:left-12 bg-white rounded-lg"
+                    style=" padding: 1px;">Shop Now</button>
+            </div>
+
+            <div class="relative">
+                <img class="h-28 md:h-40 lg:h-72 rounded-lg backdrop bg-black opacity-40" src="./images/new4.jpg"
+                    alt="">
+                <button
+                    class="absolute text-xs lg:text-base lg:top-28 lg:left-24  hover:bg-gray-800 hover:text-white top-12 left-7 md:top-20 md:left-12 bg-white rounded-lg"
+                    style=" padding: 1px;">Shop Now</button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Most Wanted -->
+    <section id="most-wanted" class="z-10">
+        <h1 class="p-2 text-lg md:text-2xl lg:text-3xl font-bold text-gray-800">Most Wanted</h1>
+        <div class="flex justify-around ">
+            <div class="relative">
+                <img class="h-28 md:h-40 lg:h-72 rounded-lg " src="./images/new6.jpg" alt="">
+                <button class=" absolute  top-0 bg-red-600 rounded text-white text-xs lg:text-base"
+                    style="padding: 2px;">sale</button>
+                <button
+                    class="likeBtn absolute bottom-1 right-1 md:right-2 text-gray-400 text-xs md:text-base lg:text-xl transition transform duration-200">
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+            </div>
+            <div class="relative">
+                <img class="h-28 md:h-40 lg:h-72 rounded-lg" src="./images/new9.jpg" alt="">
+                <button class=" absolute  top-0 bg-red-600 rounded text-white text-xs lg:text-base"
+                    style="padding: 2px;">sale</button>
+                <button
+                    class="likeBtn absolute bottom-1 right-1 md:right-2 text-gray-400 text-xs md:text-base lg:text-xl transition transform duration-200">
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+            </div>
+            <div class="relative">
+                <img class="h-28 md:h-40 lg:h-72 rounded-lg" src="./images/new7.jpg" alt="">
+                <button class=" absolute  top-0 bg-red-600 rounded text-white text-xs lg:text-base"
+                    style="padding: 2px;">sale</button>
+                <button
+                    class="likeBtn absolute bottom-1 right-1 md:right-2 text-gray-400 text-xs md:text-base lg:text-xl transition transform duration-200">
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+            </div>
+            <div class="relative">
+                <img class="h-28 md:h-40 lg:h-72 rounded-lg " src="./images/new8.jpg" alt="">
+                <button class=" absolute  top-0 bg-red-600 rounded text-white text-xs lg:text-base"
+                    style="padding: 2px;">sale</button>
+                <button
+                    class=" likeBtn absolute bottom-1 right-1 md:right-2 text-gray-400 text-xs md:text-base lg:text-xl transition transform duration-200">
+                    <i class="fa-solid fa-heart"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <div class="mt-5 p-5 flex justify-center">
+        <div class="bg-gray-800 p-5 flex flex-row justify-center items-center lg:w-3/4">
+            <div class="">
+                <img src="./images/offer.jpg" class="h-full w-full object-cover" alt="">
+            </div>
+            <div class="p-5">
+                <h2 class="text-white font-bold text-xs md:text-3xl">Limited Offer</h2>
+                <p class="text-white text-xs md:text-lg lg:text-xl">35% OFF on this for the first 30 CustomersShop Now
+                </p>
+                <button class="bg-white h-4 w-20 text-xs  md:h-8 md:w-40 lg:text-sm rounded-md md:text-1xl">Shop Now <i
+                        class="fa-solid fa-arrow-right" style="color: #000000;"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- News Letter Section -->
+    <div class=" p-4">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-2xl md:text-4xl font-bold text-gray-800">Newsletter</h2>
+            <p class="text-gray-800 text-xs md:text-xl leading-relaxed mt-3">Signup for our email newspaper to get
+                exclusive discounts, updates, and more</p>
+
+            <div
+                class="max-w-lg mx-auto bg-gray-100 flex p-1 rounded-full text-left border border-gray-200 focus-within:border-gray-800 focus-within:bg-transparent mt-4">
+                <input type='email' placeholder='Enter your email'
+                    class="text-slate-900 w-full outline-none bg-transparent text-sm px-4 py-3" />
+                <button type='button'
+                    class="bg-white hover:bg-gray-800 transition-all hover:text-white font-semibold text-sm rounded-full px-6 py-3 cursor-pointer">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 mt-auto">
+        <div class="container mx-auto px-4 py-6">
+
+            <!-- Social Icons -->
+            <div class="flex justify-center items-center space-x-6 border-t border-gray-700 pt-6">
+                <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <!-- Brand -->
+            <div class="text-center mt-6">
+                <h2 class="text-xl font-semibold">Nostra</h2>
+                <p class="text-sm text-gray-400">Copyright © 2025 Nostra, Inc.</p>
+            </div>
+
+            <!-- Links -->
+            <div class="flex flex-wrap justify-center gap-4 mt-6 text-sm">
+                <a href="#" class="hover:text-white">Legal Stuff</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Security</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Website Accessibility</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Manage Cookies</a>
+                <span>|</span>
+                <a href="#" class="hover:text-white">Your Privacy Choices</a>
+            </div>
+        </div>
+    </footer>
+   
+</body>
+
+</html>
